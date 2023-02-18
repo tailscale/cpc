@@ -1,10 +1,11 @@
 // Copyright (c) Tailscale Inc & AUTHORS
 // SPDX-License-Identifier: BSD-3-Clause
 
-package main
+package cpc
 
 import (
 	"bytes"
+	"context"
 	"crypto/rand"
 	"fmt"
 	"io/ioutil"
@@ -45,7 +46,7 @@ func TestCopyBlockwise(t *testing.T) {
 							t.Fatal(err)
 						}
 					}
-					st, err := cpBlockwise(loggerDiscard, src, dst)
+					st, err := Copy(context.Background(), loggerDiscard, src, dst)
 					if err != nil {
 						t.Fatalf("cpblockwise: %v", err)
 					}
