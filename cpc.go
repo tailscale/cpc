@@ -1,3 +1,6 @@
+// Copyright (c) Tailscale Inc & AUTHORS
+// SPDX-License-Identifier: BSD-3-Clause
+
 // The cpblockwise command is like cp but optimized for files like SQLite that
 // are only written at 4K page granularity. It writes the dest file in-place
 // and tries to not write a page that's identical.
